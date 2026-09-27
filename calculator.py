@@ -4,7 +4,7 @@ def get_number(prompt):
         try:
             return float(input(prompt))
         except ValueError:
-            print("Invalid input. Please enter a valid number.")
+            print("Invalid input. Please enter a valid number (e.g. 5 or 3.2).")
 
 def add(a, b):
     return a + b
@@ -42,6 +42,7 @@ def get_operation(choice):
         return "exit"
     else:
         return None
+
 def main():
     while True:
         print("\n=== Calculator Menu ===")
@@ -55,24 +56,19 @@ def main():
         if operation == "exit":
             print("Goodbye!")
             break
-        elif operation == "add":
+        elif operation in ("add", "subtract", "multiply", "divide"):
             num1 = get_number("Enter the first number: ")
             num2 = get_number("Enter the second number: ")
-            print(f"Result: {add(num1, num2)}")
-        elif operation == "subtract":
-            num1 = get_number("Enter the first number: ")
-            num2 = get_number("Enter the second number: ")
-            print(f"Result: {subtract(num1, num2)}")
-        elif operation == "multiply":
-            num1 = get_number("Enter the first number: ")
-            num2 = get_number("Enter the second number: ")
-            print(f"Result: {multiply(num1, num2)}")
-        elif operation == "divide":
-            num1 = get_number("Enter the first number: ")
-            num2 = get_number("Enter the second number: ")
-            print(f"Result: {divide(num1, num2)}")
+            if operation == "add":
+                print(f"Result: {add(num1, num2)}")
+            elif operation == "subtract":
+                print(f"Result: {subtract(num1, num2)}")
+            elif operation == "multiply":
+                print(f"Result: {multiply(num1, num2)}")
+            elif operation == "divide":
+                print(f"Result: {divide(num1, num2)}")
         else:
-            print("This operation is not yet implemented.")
+            print("Invalid choice. Please try again (e.g. 1, A, add).")
 
 if __name__ == "__main__":
     main()
