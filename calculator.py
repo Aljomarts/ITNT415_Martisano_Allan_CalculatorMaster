@@ -10,17 +10,24 @@ def add(a, b):
     return a + b
 
 def subtract(a, b):
+    """Return a - b."""
     return a - b
+
+def multiply(a, b):
+    return a * b
 
 def get_operation(choice):
     choice = choice.strip().lower()
     addition_terms = ["1", "a", "add", "addition", "plus", "sum"]
     subtraction_terms = ["2", "b", "sub", "subtract", "subtraction", "minus"]
+    multiplication_terms = ["3", "c", "mul", "multiply", "multiplication", "times"]
     exit_terms = ["5", "e", "exit", "quit", "q", "bye"]
     if choice in addition_terms:
         return "add"
     elif choice in subtraction_terms:
         return "subtract"
+    elif choice in multiplication_terms:
+        return "multiply"
     elif choice in exit_terms:
         return "exit"
     else:
@@ -39,14 +46,18 @@ def main():
         if operation == "exit":
             print("Goodbye!")
             break
-                elif operation == "add":
+        elif operation == "add":
             num1 = get_number("Enter the first number: ")
             num2 = get_number("Enter the second number: ")
             print(f"Result: {add(num1, num2)}")
         elif operation == "subtract":
             num1 = get_number("Enter the first number: ")
             num2 = get_number("Enter the second number: ")
-            print(f"Result: {subtract(num1, num2)}"))
+            print(f"Result: {subtract(num1, num2)}")
+        elif operation == "multiply":
+            num1 = get_number("Enter the first number: ")
+            num2 = get_number("Enter the second number: ")
+            print(f"Result: {multiply(num1, num2)}")
         else:
             print("This operation is not yet implemented.")
 
