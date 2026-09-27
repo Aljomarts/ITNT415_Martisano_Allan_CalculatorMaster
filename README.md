@@ -19,3 +19,5 @@ A menu-driven Python calculator built using Git and GitHub branching. Each arith
 - Continuous execution until exit
 
 ## Sample Execution Screenshot
+
+![image alt](https://github.com/Aljomarts/ITNT415_Martisano_Allan_CalculatorMaster/blob/12ed55d8db59a6370635c1f3ef823d431bae19b9/SampleExecution.png)
