@@ -1,19 +1,26 @@
 def get_number(prompt):
+    """Prompt the user until a valid float is entered."""
     while True:
         try:
             return float(input(prompt))
         except ValueError:
-            print("Invalid input. Please enter a number.")
+            print("Invalid input. Please enter a valid number.")
 
 def add(a, b):
     return a + b
 
+def subtract(a, b):
+    return a - b
+
 def get_operation(choice):
     choice = choice.strip().lower()
     addition_terms = ["1", "a", "add", "addition", "plus", "sum"]
+    subtraction_terms = ["2", "b", "sub", "subtract", "subtraction", "minus"]
     exit_terms = ["5", "e", "exit", "quit", "q", "bye"]
     if choice in addition_terms:
         return "add"
+    elif choice in subtraction_terms:
+        return "subtract"
     elif choice in exit_terms:
         return "exit"
     else:
@@ -32,10 +39,14 @@ def main():
         if operation == "exit":
             print("Goodbye!")
             break
-        elif operation == "add":
+                elif operation == "add":
             num1 = get_number("Enter the first number: ")
             num2 = get_number("Enter the second number: ")
             print(f"Result: {add(num1, num2)}")
+        elif operation == "subtract":
+            num1 = get_number("Enter the first number: ")
+            num2 = get_number("Enter the second number: ")
+            print(f"Result: {subtract(num1, num2)}"))
         else:
             print("This operation is not yet implemented.")
 
