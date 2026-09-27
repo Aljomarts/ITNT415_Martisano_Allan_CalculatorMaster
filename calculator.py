@@ -17,11 +17,18 @@ def multiply(a, b):
     """Return a * b."""
     return a * b
 
+def divide(a, b):
+    """Return a / b, handling division by zero."""
+    if b == 0:
+        return "Error: Division by zero is not allowed."
+    return a / b
+
 def get_operation(choice):
     choice = choice.strip().lower()
     addition_terms = ["1", "a", "add", "addition", "plus", "sum"]
     subtraction_terms = ["2", "b", "sub", "subtract", "subtraction", "minus"]
     multiplication_terms = ["3", "c", "mul", "multiply", "multiplication", "times"]
+    division_terms = ["4", "d", "div", "divide", "division"]
     exit_terms = ["5", "e", "exit", "quit", "q", "bye"]
     if choice in addition_terms:
         return "add"
@@ -29,11 +36,12 @@ def get_operation(choice):
         return "subtract"
     elif choice in multiplication_terms:
         return "multiply"
+    elif choice in division_terms:
+        return "divide"
     elif choice in exit_terms:
         return "exit"
     else:
         return None
-
 def main():
     while True:
         print("\n=== Calculator Menu ===")
@@ -59,6 +67,10 @@ def main():
             num1 = get_number("Enter the first number: ")
             num2 = get_number("Enter the second number: ")
             print(f"Result: {multiply(num1, num2)}")
+        elif operation == "divide":
+            num1 = get_number("Enter the first number: ")
+            num2 = get_number("Enter the second number: ")
+            print(f"Result: {divide(num1, num2)}")
         else:
             print("This operation is not yet implemented.")
 
