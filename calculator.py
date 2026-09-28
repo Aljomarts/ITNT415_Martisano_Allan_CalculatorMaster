@@ -4,7 +4,7 @@ def get_number(prompt):
         try:
             return float(input(prompt))
         except ValueError:
-            print("Invalid input. Please enter a valid number (e.g. 5 or 3.2).")
+            print("Invalid input. Please enter a valid number.")
 
 def add(a, b):
     return a + b
@@ -68,7 +68,7 @@ def main():
             elif operation == "divide":
                 print(f"Result: {divide(num1, num2)}")
         else:
-            print("Invalid choice. Please try again (e.g. 1, A, add).")
+            print("Invalid choice. Please try again.")
 
 if __name__ == "__main__":
     main()
