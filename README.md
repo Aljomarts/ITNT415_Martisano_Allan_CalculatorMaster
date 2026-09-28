@@ -1,7 +1,7 @@
 # Calculator Master
 
-**Student Name:** Allan Martisano
-**Course and Section:** S-ITNT415
+**Student Name:** Allan Joseph A. Martisano
+**Section:** BIT41
 
 ## Project Description
 A menu-driven Python calculator built using Git and GitHub branching. Each arithmetic operation was developed on its own feature branch and merged into main via pull requests.
